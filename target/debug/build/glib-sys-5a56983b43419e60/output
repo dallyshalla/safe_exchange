@@ -1,0 +1,9 @@
+cargo:rustc-link-search=native=/usr/lib/x86_64-linux-gnu
+cargo:rustc-link-lib=glib-2.0
+cargo:rustc-cfg=glib_2_32
+cargo:rustc-cfg=glib_2_34
+cargo:rustc-cfg=glib_2_36
+cargo:rustc-cfg=glib_2_38
+cargo:rustc-cfg=glib_2_40
+cargo:rustc-cfg=glib_2_44
+cargo:cfg=glib_2_32 glib_2_34 glib_2_36 glib_2_38 glib_2_40 glib_2_44

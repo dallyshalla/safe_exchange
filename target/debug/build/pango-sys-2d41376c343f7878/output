@@ -1,0 +1,10 @@
+cargo:rustc-link-search=native=/usr/lib/x86_64-linux-gnu
+cargo:rustc-link-lib=pango-1.0
+cargo:rustc-link-lib=gobject-2.0
+cargo:rustc-link-lib=glib-2.0
+cargo:rustc-cfg=pango_1_30
+cargo:rustc-cfg=pango_1_31
+cargo:rustc-cfg=pango_1_32
+cargo:rustc-cfg=pango_1_32_4
+cargo:rustc-cfg=pango_1_34
+cargo:cfg=pango_1_30 pango_1_31 pango_1_32 pango_1_32_4 pango_1_34

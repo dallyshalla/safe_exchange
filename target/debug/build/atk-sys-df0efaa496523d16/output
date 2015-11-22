@@ -1,0 +1,11 @@
+cargo:rustc-link-search=native=/usr/lib/x86_64-linux-gnu
+cargo:rustc-link-lib=atk-1.0
+cargo:rustc-link-lib=gobject-2.0
+cargo:rustc-link-lib=glib-2.0
+cargo:rustc-cfg=atk_2_7_90
+cargo:rustc-cfg=atk_2_8
+cargo:rustc-cfg=atk_2_9_3
+cargo:rustc-cfg=atk_2_9_4
+cargo:rustc-cfg=atk_2_10
+cargo:rustc-cfg=atk_2_12
+cargo:cfg=atk_2_7_90 atk_2_8 atk_2_9_3 atk_2_9_4 atk_2_10 atk_2_12

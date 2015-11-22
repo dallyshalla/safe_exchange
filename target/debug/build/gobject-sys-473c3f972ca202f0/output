@@ -1,0 +1,10 @@
+cargo:rustc-link-search=native=/usr/lib/x86_64-linux-gnu
+cargo:rustc-link-lib=gobject-2.0
+cargo:rustc-link-lib=glib-2.0
+cargo:rustc-cfg=gobject_2_32
+cargo:rustc-cfg=gobject_2_34
+cargo:rustc-cfg=gobject_2_36
+cargo:rustc-cfg=gobject_2_38
+cargo:rustc-cfg=gobject_2_42
+cargo:rustc-cfg=gobject_2_44
+cargo:cfg=gobject_2_32 gobject_2_34 gobject_2_36 gobject_2_38 gobject_2_42 gobject_2_44

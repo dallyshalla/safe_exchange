@@ -1,0 +1,54 @@
+cargo:rustc-link-search=native=/usr/lib/x86_64-linux-gnu
+cargo:rustc-link-lib=gtk-3
+cargo:rustc-link-lib=gdk-3
+cargo:rustc-link-lib=pangocairo-1.0
+cargo:rustc-link-lib=pango-1.0
+cargo:rustc-link-lib=atk-1.0
+cargo:rustc-link-lib=cairo-gobject
+cargo:rustc-link-lib=cairo
+cargo:rustc-link-lib=gdk_pixbuf-2.0
+cargo:rustc-link-lib=gio-2.0
+cargo:rustc-link-lib=gobject-2.0
+cargo:rustc-link-lib=glib-2.0
+cargo:rustc-cfg=gtk_3_4
+cargo:rustc-cfg=gtk_3_6
+cargo:rustc-cfg=gtk_3_8
+cargo:rustc-cfg=gtk_3_10
+cargo:rustc-cfg=gtk_3_12
+cargo:rustc-cfg=gtk_3_14
+cargo:cfg=gtk_3_4 gtk_3_6 gtk_3_8 gtk_3_10 gtk_3_12 gtk_3_14
+TARGET = Some("x86_64-unknown-linux-gnu")
+TARGET = Some("x86_64-unknown-linux-gnu")
+CARGO_MANIFEST_DIR = Some("/home/dally/.cargo/registry/src/github.com-0a35038f75765ae4/gtk-sys-0.2.1")
+OUT_DIR = Some("/home/dally/production/exchange/target/debug/build/gtk-sys-9f3b5ee401491c8e/out")
+OPT_LEVEL = Some("0")
+PROFILE = Some("debug")
+debug 0
+TARGET = Some("x86_64-unknown-linux-gnu")
+HOST = Some("x86_64-unknown-linux-gnu")
+CC_x86_64-unknown-linux-gnu = None
+CC_x86_64_unknown_linux_gnu = None
+HOST_CC = None
+CC = None
+TARGET = Some("x86_64-unknown-linux-gnu")
+HOST = Some("x86_64-unknown-linux-gnu")
+CFLAGS_x86_64-unknown-linux-gnu = None
+CFLAGS_x86_64_unknown_linux_gnu = None
+HOST_CFLAGS = None
+CFLAGS = None
+TARGET = Some("x86_64-unknown-linux-gnu")
+HOST = Some("x86_64-unknown-linux-gnu")
+CC_x86_64-unknown-linux-gnu = None
+CC_x86_64_unknown_linux_gnu = None
+HOST_CC = None
+CC = None
+running: "cc" "-O0" "-c" "-ffunction-sections" "-fdata-sections" "-g" "-m64" "-fPIC" "-I" "/usr/include/gtk-3.0" "-I" "/usr/include/at-spi2-atk/2.0" "-I" "/usr/include/at-spi-2.0" "-I" "/usr/include/dbus-1.0" "-I" "/usr/lib/x86_64-linux-gnu/dbus-1.0/include" "-I" "/usr/include/gtk-3.0" "-I" "/usr/include/gio-unix-2.0/" "-I" "/usr/include/mirclient" "-I" "/usr/include/mircommon" "-I" "/usr/include/cairo" "-I" "/usr/include/pango-1.0" "-I" "/usr/include/harfbuzz" "-I" "/usr/include/pango-1.0" "-I" "/usr/include/atk-1.0" "-I" "/usr/include/cairo" "-I" "/usr/include/pixman-1" "-I" "/usr/include/freetype2" "-I" "/usr/include/libpng12" "-I" "/usr/include/gdk-pixbuf-2.0" "-I" "/usr/include/libpng12" "-I" "/usr/include/glib-2.0" "-I" "/usr/lib/x86_64-linux-gnu/glib-2.0/include" "-DGTK_3_4" "-DGTK_3_6" "-DGTK_3_8" "-DGTK_3_10" "-DGTK_3_12" "-DGTK_3_14" "-o" "/home/dally/production/exchange/target/debug/build/gtk-sys-9f3b5ee401491c8e/out/src/gtk_glue.o" "/home/dally/.cargo/registry/src/github.com-0a35038f75765ae4/gtk-sys-0.2.1/src/gtk_glue.c"
+TARGET = Some("x86_64-unknown-linux-gnu")
+HOST = Some("x86_64-unknown-linux-gnu")
+AR_x86_64-unknown-linux-gnu = None
+AR_x86_64_unknown_linux_gnu = None
+HOST_AR = None
+AR = None
+running: "ar" "crus" "/home/dally/production/exchange/target/debug/build/gtk-sys-9f3b5ee401491c8e/out/librgtk_glue.a" "/home/dally/production/exchange/target/debug/build/gtk-sys-9f3b5ee401491c8e/out/src/gtk_glue.o"
+cargo:rustc-link-search=native=/home/dally/production/exchange/target/debug/build/gtk-sys-9f3b5ee401491c8e/out
+cargo:rustc-link-lib=static=rgtk_glue

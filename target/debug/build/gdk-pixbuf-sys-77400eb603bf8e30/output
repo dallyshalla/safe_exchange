@@ -1,0 +1,8 @@
+cargo:rustc-link-search=native=/usr/lib/x86_64-linux-gnu
+cargo:rustc-link-lib=gdk_pixbuf-2.0
+cargo:rustc-link-lib=gobject-2.0
+cargo:rustc-link-lib=glib-2.0
+cargo:rustc-cfg=gdk_pixbuf_2_26
+cargo:rustc-cfg=gdk_pixbuf_2_28
+cargo:rustc-cfg=gdk_pixbuf_2_30
+cargo:cfg=gdk_pixbuf_2_26 gdk_pixbuf_2_28 gdk_pixbuf_2_30

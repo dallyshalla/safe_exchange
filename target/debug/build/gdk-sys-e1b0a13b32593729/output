@@ -1,0 +1,16 @@
+cargo:rustc-link-search=native=/usr/lib/x86_64-linux-gnu
+cargo:rustc-link-lib=gdk-3
+cargo:rustc-link-lib=pangocairo-1.0
+cargo:rustc-link-lib=pango-1.0
+cargo:rustc-link-lib=gdk_pixbuf-2.0
+cargo:rustc-link-lib=cairo-gobject
+cargo:rustc-link-lib=cairo
+cargo:rustc-link-lib=gobject-2.0
+cargo:rustc-link-lib=glib-2.0
+cargo:rustc-cfg=gdk_3_4
+cargo:rustc-cfg=gdk_3_6
+cargo:rustc-cfg=gdk_3_8
+cargo:rustc-cfg=gdk_3_10
+cargo:rustc-cfg=gdk_3_12
+cargo:rustc-cfg=gdk_3_14
+cargo:cfg=gdk_3_4 gdk_3_6 gdk_3_8 gdk_3_10 gdk_3_12 gdk_3_14

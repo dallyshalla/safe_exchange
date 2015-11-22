@@ -1,0 +1,6 @@
+cargo:rustc-cfg=gdk_3_4
+cargo:rustc-cfg=gdk_3_6
+cargo:rustc-cfg=gdk_3_8
+cargo:rustc-cfg=gdk_3_10
+cargo:rustc-cfg=gdk_3_12
+cargo:rustc-cfg=gdk_3_14

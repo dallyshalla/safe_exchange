@@ -1,0 +1,5 @@
+cargo:rustc-link-search=native=/usr/lib/x86_64-linux-gnu
+cargo:rustc-link-lib=cairo
+cargo:rustc-cfg=cairo_1_12
+cargo:rustc-cfg=cairo_1_14
+cargo:cfg=cairo_1_12 cairo_1_14
