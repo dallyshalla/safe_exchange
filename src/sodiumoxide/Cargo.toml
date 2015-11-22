@@ -1,0 +1,21 @@
+[package]
+name = "maidsafe_sodiumoxide"
+description = "Fast cryptographic library for Rust (bindings to libsodium)"
+documentation = "http://maidsafe.net/sodiumoxide"
+repository = "https://github.com/maidsafe/sodiumoxide"
+readme = "README.md"
+keywords = ["crypto", "NaCl", "libsodium"]
+version = "0.0.14"
+authors = ["dnaq", "dev@maidsafe.net"]
+license = "MIT"
+
+[dependencies]
+libc = "*"
+libsodium-sys = "*"
+rustc-serialize = "*"
+
+[dev-dependencies]
+cbor = "*"
+
+[features]
+benchmarks = []

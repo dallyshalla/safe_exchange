@@ -1,0 +1,12 @@
+*~
+*.sw*
+*.o
+*.so
+/doc
+.rust
+/bin
+
+# Cargo files
+Cargo.lock
+/target
+libsodium-sys/target

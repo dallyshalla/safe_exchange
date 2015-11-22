@@ -1,0 +1,36 @@
+env:
+  global:
+    - secure: hO3muck3cWHMhL7hS6OYeYEGL56qE9p8YSHJgKLYF4o+QN7O8imKWlKMTrBe/pKEHVylO3n8bnsDw2+pGVK6FkDvsdiJAPhq5Cx1Hd9R4SjvkKC2Sn9ypT/3CM1wPi6DcawVTuAFleNlc5NujI/ToXonXWQ0D4nimNAdCKntdgMbFs1YbQxVADnW7pbii1wusgtiT6xWyWJwcqTXwW5XJofig7cKHO2fYpi/0nWkug+BGhfeOJ6/fC6GbBJ/7azfGB9Nc+hRNhCbMtHJGbTkuupSVtpxk7TuEwnVDYosWQAjJxaWYSM1eJmvysgC+tvMQgw8haGpgY9xni+nu3HrozEgYYnwnh5+N4TZdn4AczrVEs1n2Y82cQp/++OS4X08+B/HWCN5WDzXRx+HOskAyvE1wA9P/payXZeUfRBqs0Z+mBcRcPxPxM7tIUT2lTBbeTjrzb/Qz4t3Iy3WTGG1T84K5YtOLstTGKBpu5LxW++f2rEGbQA7N3v1l0PiT5ZWgqkB4NgoE7wLxXVRqIV+kjSX/C7Gi1dC5EnCU1XCqA9T3USRuB/SGJxhDuw/Gmde1n/Y7SaQnCwgrMPj7LMIF49qYPIf7r6Zb+FVb+pkSbf7LiKNr3DABuDDInBn8UcoXlRMBbxTtvSKLxXds7TN3qFilNj4yizrOGWGdcCFwRU=
+    - LibSodiumVersion=1.0.3
+    - ElfUtilsVersion=0.163
+os:
+  - linux
+  - osx
+language: rust
+rust:
+#  - nightly
+#  - beta
+  - stable
+sudo: false
+branches:
+  only:
+    - master
+cache:
+  directories:
+    - $HOME/libsodium-$LibSodiumVersion
+    - $HOME/elfutils-$ElfUtilsVersion
+install:
+  - curl -sSLO https://github.com/maidsafe/QA/raw/master/Bash%20Scripts/Travis/install_libsodium.sh
+  - . install_libsodium.sh
+script:
+  - curl -sSL https://github.com/maidsafe/QA/raw/master/Bash%20Scripts/Travis/build_and_run_tests.sh | bash
+after_success: |
+    if [[ $TRAVIS_OS_NAME = linux ]] && [[ ${TRAVIS_JOB_NUMBER##*.} -eq 1 ]] &&
+       [[ $TRAVIS_BRANCH = master ]] && [[ $TRAVIS_PULL_REQUEST = false ]]; then
+      curl -sSL https://github.com/maidsafe/QA/raw/master/Bash%20Scripts/Travis/deploy_docs.sh | bash
+      curl -sSLO https://github.com/maidsafe/QA/raw/master/Bash%20Scripts/Travis/run_coverage.sh
+      head -n -1 run_coverage.sh > run_coverage_modified.sh
+      echo '$HOME/bin/kcov --coveralls-id=$TRAVIS_JOB_ID --include-path=src target/kcov target/debug/maidsafe_$ProjectName-*' >> run_coverage_modified.sh
+      cat run_coverage_modified.sh
+      . run_coverage_modified.sh
+    fi

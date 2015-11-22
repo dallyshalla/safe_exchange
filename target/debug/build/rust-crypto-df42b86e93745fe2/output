@@ -1,0 +1,57 @@
+TARGET = Some("x86_64-unknown-linux-gnu")
+TARGET = Some("x86_64-unknown-linux-gnu")
+CARGO_MANIFEST_DIR = Some("/home/dally/.cargo/registry/src/github.com-0a35038f75765ae4/rust-crypto-0.2.33")
+OUT_DIR = Some("/home/dally/production/exchange44/target/debug/build/rust-crypto-df42b86e93745fe2/out")
+OPT_LEVEL = Some("0")
+PROFILE = Some("debug")
+debug 0
+TARGET = Some("x86_64-unknown-linux-gnu")
+HOST = Some("x86_64-unknown-linux-gnu")
+CC_x86_64-unknown-linux-gnu = None
+CC_x86_64_unknown_linux_gnu = None
+HOST_CC = None
+CC = None
+TARGET = Some("x86_64-unknown-linux-gnu")
+HOST = Some("x86_64-unknown-linux-gnu")
+CFLAGS_x86_64-unknown-linux-gnu = None
+CFLAGS_x86_64_unknown_linux_gnu = None
+HOST_CFLAGS = None
+CFLAGS = None
+TARGET = Some("x86_64-unknown-linux-gnu")
+HOST = Some("x86_64-unknown-linux-gnu")
+CC_x86_64-unknown-linux-gnu = None
+CC_x86_64_unknown_linux_gnu = None
+HOST_CC = None
+CC = None
+running: "cc" "-O0" "-c" "-ffunction-sections" "-fdata-sections" "-g" "-m64" "-fPIC" "-o" "/home/dally/production/exchange44/target/debug/build/rust-crypto-df42b86e93745fe2/out/src/util_helpers.o" "/home/dally/.cargo/registry/src/github.com-0a35038f75765ae4/rust-crypto-0.2.33/src/util_helpers.c"
+OPT_LEVEL = Some("0")
+PROFILE = Some("debug")
+debug 0
+TARGET = Some("x86_64-unknown-linux-gnu")
+HOST = Some("x86_64-unknown-linux-gnu")
+CC_x86_64-unknown-linux-gnu = None
+CC_x86_64_unknown_linux_gnu = None
+HOST_CC = None
+CC = None
+TARGET = Some("x86_64-unknown-linux-gnu")
+HOST = Some("x86_64-unknown-linux-gnu")
+CFLAGS_x86_64-unknown-linux-gnu = None
+CFLAGS_x86_64_unknown_linux_gnu = None
+HOST_CFLAGS = None
+CFLAGS = None
+TARGET = Some("x86_64-unknown-linux-gnu")
+HOST = Some("x86_64-unknown-linux-gnu")
+CC_x86_64-unknown-linux-gnu = None
+CC_x86_64_unknown_linux_gnu = None
+HOST_CC = None
+CC = None
+running: "cc" "-O0" "-c" "-ffunction-sections" "-fdata-sections" "-g" "-m64" "-fPIC" "-o" "/home/dally/production/exchange44/target/debug/build/rust-crypto-df42b86e93745fe2/out/src/aesni_helpers.o" "/home/dally/.cargo/registry/src/github.com-0a35038f75765ae4/rust-crypto-0.2.33/src/aesni_helpers.c"
+TARGET = Some("x86_64-unknown-linux-gnu")
+HOST = Some("x86_64-unknown-linux-gnu")
+AR_x86_64-unknown-linux-gnu = None
+AR_x86_64_unknown_linux_gnu = None
+HOST_AR = None
+AR = None
+running: "ar" "crus" "/home/dally/production/exchange44/target/debug/build/rust-crypto-df42b86e93745fe2/out/lib_rust_crypto_helpers.a" "/home/dally/production/exchange44/target/debug/build/rust-crypto-df42b86e93745fe2/out/src/util_helpers.o" "/home/dally/production/exchange44/target/debug/build/rust-crypto-df42b86e93745fe2/out/src/aesni_helpers.o"
+cargo:rustc-link-search=native=/home/dally/production/exchange44/target/debug/build/rust-crypto-df42b86e93745fe2/out
+cargo:rustc-link-lib=static=_rust_crypto_helpers

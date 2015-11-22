@@ -1,0 +1,57 @@
+TARGET = Some("x86_64-unknown-linux-gnu")
+TARGET = Some("x86_64-unknown-linux-gnu")
+CARGO_MANIFEST_DIR = Some("/home/dally/.cargo/registry/src/github.com-0a35038f75765ae4/secp256k1-0.4.1")
+OUT_DIR = Some("/home/dally/production/exchange44/target/debug/build/secp256k1-fa47f47f366c8111/out")
+OPT_LEVEL = Some("0")
+PROFILE = Some("debug")
+debug 0
+TARGET = Some("x86_64-unknown-linux-gnu")
+HOST = Some("x86_64-unknown-linux-gnu")
+CC_x86_64-unknown-linux-gnu = None
+CC_x86_64_unknown_linux_gnu = None
+HOST_CC = None
+CC = None
+TARGET = Some("x86_64-unknown-linux-gnu")
+HOST = Some("x86_64-unknown-linux-gnu")
+CFLAGS_x86_64-unknown-linux-gnu = None
+CFLAGS_x86_64_unknown_linux_gnu = None
+HOST_CFLAGS = None
+CFLAGS = None
+TARGET = Some("x86_64-unknown-linux-gnu")
+HOST = Some("x86_64-unknown-linux-gnu")
+CC_x86_64-unknown-linux-gnu = None
+CC_x86_64_unknown_linux_gnu = None
+HOST_CC = None
+CC = None
+running: "cc" "-O0" "-c" "-ffunction-sections" "-fdata-sections" "-g" "-m64" "-fPIC" "-I" "depend/secp256k1/" "-I" "depend/secp256k1/src" "-g" "-DUSE_NUM_NONE=1" "-DUSE_FIELD_INV_BUILTIN=1" "-DUSE_SCALAR_INV_BUILTIN=1" "-DUSE_FIELD_10X26=1" "-DUSE_SCALAR_8X32=1" "-DUSE_ENDOMORPHISM=1" "-DENABLE_MODULE_ECDH=1" "-DENABLE_MODULE_RECOVERY=1" "-o" "/home/dally/production/exchange44/target/debug/build/secp256k1-fa47f47f366c8111/out/depend/secp256k1/src/laxder_shim.o" "/home/dally/.cargo/registry/src/github.com-0a35038f75765ae4/secp256k1-0.4.1/depend/secp256k1/src/laxder_shim.c"
+OPT_LEVEL = Some("0")
+PROFILE = Some("debug")
+debug 0
+TARGET = Some("x86_64-unknown-linux-gnu")
+HOST = Some("x86_64-unknown-linux-gnu")
+CC_x86_64-unknown-linux-gnu = None
+CC_x86_64_unknown_linux_gnu = None
+HOST_CC = None
+CC = None
+TARGET = Some("x86_64-unknown-linux-gnu")
+HOST = Some("x86_64-unknown-linux-gnu")
+CFLAGS_x86_64-unknown-linux-gnu = None
+CFLAGS_x86_64_unknown_linux_gnu = None
+HOST_CFLAGS = None
+CFLAGS = None
+TARGET = Some("x86_64-unknown-linux-gnu")
+HOST = Some("x86_64-unknown-linux-gnu")
+CC_x86_64-unknown-linux-gnu = None
+CC_x86_64_unknown_linux_gnu = None
+HOST_CC = None
+CC = None
+running: "cc" "-O0" "-c" "-ffunction-sections" "-fdata-sections" "-g" "-m64" "-fPIC" "-I" "depend/secp256k1/" "-I" "depend/secp256k1/src" "-g" "-DUSE_NUM_NONE=1" "-DUSE_FIELD_INV_BUILTIN=1" "-DUSE_SCALAR_INV_BUILTIN=1" "-DUSE_FIELD_10X26=1" "-DUSE_SCALAR_8X32=1" "-DUSE_ENDOMORPHISM=1" "-DENABLE_MODULE_ECDH=1" "-DENABLE_MODULE_RECOVERY=1" "-o" "/home/dally/production/exchange44/target/debug/build/secp256k1-fa47f47f366c8111/out/depend/secp256k1/src/secp256k1.o" "/home/dally/.cargo/registry/src/github.com-0a35038f75765ae4/secp256k1-0.4.1/depend/secp256k1/src/secp256k1.c"
+TARGET = Some("x86_64-unknown-linux-gnu")
+HOST = Some("x86_64-unknown-linux-gnu")
+AR_x86_64-unknown-linux-gnu = None
+AR_x86_64_unknown_linux_gnu = None
+HOST_AR = None
+AR = None
+running: "ar" "crus" "/home/dally/production/exchange44/target/debug/build/secp256k1-fa47f47f366c8111/out/libsecp256k1.a" "/home/dally/production/exchange44/target/debug/build/secp256k1-fa47f47f366c8111/out/depend/secp256k1/src/laxder_shim.o" "/home/dally/production/exchange44/target/debug/build/secp256k1-fa47f47f366c8111/out/depend/secp256k1/src/secp256k1.o"
+cargo:rustc-link-search=native=/home/dally/production/exchange44/target/debug/build/secp256k1-fa47f47f366c8111/out
+cargo:rustc-link-lib=static=secp256k1

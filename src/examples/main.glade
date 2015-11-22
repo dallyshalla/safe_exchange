@@ -449,8 +449,6 @@
             </child>
             <child>
               <object class="GtkScrolledWindow" id="buysearchresultScrollWindow">
-                <property name="width_request">480</property>
-                <property name="height_request">190</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="shadow_type">in</property>
@@ -459,7 +457,7 @@
                 </child>
               </object>
               <packing>
-                <property name="expand">False</property>
+                <property name="expand">True</property>
                 <property name="fill">True</property>
                 <property name="position">6</property>
               </packing>
@@ -701,7 +699,7 @@ WARNING **** EXPERIMENTAL SOFTWARE&lt; USE WITH CAUTION ***</property>
                     <property name="can_focus">False</property>
                     <property name="orientation">vertical</property>
                     <child>
-                      <object class="GtkLabel" id="label9">
+                      <object class="GtkLabel" id="sellnameLabel">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="label" translatable="yes">Item name</property>
@@ -713,7 +711,7 @@ WARNING **** EXPERIMENTAL SOFTWARE&lt; USE WITH CAUTION ***</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkTextView" id="textview2">
+                      <object class="GtkTextView" id="selldescriptionTextView">
                         <property name="height_request">160</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
@@ -750,7 +748,7 @@ WARNING **** EXPERIMENTAL SOFTWARE&lt; USE WITH CAUTION ***</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkImage" id="image1">
+                      <object class="GtkImage" id="sellitemImage">
                         <property name="height_request">140</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
@@ -763,7 +761,7 @@ WARNING **** EXPERIMENTAL SOFTWARE&lt; USE WITH CAUTION ***</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkLabel" id="label16">
+                      <object class="GtkLabel" id="sellrecpriceLabel">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="label" translatable="yes">price</property>
@@ -816,7 +814,7 @@ WARNING **** EXPERIMENTAL SOFTWARE&lt; USE WITH CAUTION ***</property>
                         <property name="can_focus">False</property>
                         <property name="halign">center</property>
                         <child>
-                          <object class="GtkButton" id="button5">
+                          <object class="GtkButton" id="sellminusquantityButton">
                             <property name="label" translatable="yes">-</property>
                             <property name="width_request">37</property>
                             <property name="visible">True</property>
@@ -830,7 +828,7 @@ WARNING **** EXPERIMENTAL SOFTWARE&lt; USE WITH CAUTION ***</property>
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkEntry" id="entry4">
+                          <object class="GtkEntry" id="sellquantityEntry">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="text" translatable="yes">0</property>
@@ -842,7 +840,7 @@ WARNING **** EXPERIMENTAL SOFTWARE&lt; USE WITH CAUTION ***</property>
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkButton" id="button6">
+                          <object class="GtkButton" id="sellplusquantityButton">
                             <property name="label" translatable="yes">+</property>
                             <property name="width_request">38</property>
                             <property name="visible">True</property>
@@ -867,7 +865,7 @@ WARNING **** EXPERIMENTAL SOFTWARE&lt; USE WITH CAUTION ***</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <child>
-                          <object class="GtkButton" id="button9">
+                          <object class="GtkButton" id="sellonequantityButton">
                             <property name="label" translatable="yes">1</property>
                             <property name="width_request">60</property>
                             <property name="visible">True</property>
@@ -881,7 +879,7 @@ WARNING **** EXPERIMENTAL SOFTWARE&lt; USE WITH CAUTION ***</property>
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkButton" id="button10">
+                          <object class="GtkButton" id="selltenquantityButton">
                             <property name="label" translatable="yes">10</property>
                             <property name="width_request">60</property>
                             <property name="visible">True</property>
@@ -895,7 +893,7 @@ WARNING **** EXPERIMENTAL SOFTWARE&lt; USE WITH CAUTION ***</property>
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkButton" id="button11">
+                          <object class="GtkButton" id="sellhundredquantityButton">
                             <property name="label" translatable="yes">100</property>
                             <property name="width_request">60</property>
                             <property name="visible">True</property>
@@ -909,7 +907,7 @@ WARNING **** EXPERIMENTAL SOFTWARE&lt; USE WITH CAUTION ***</property>
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkButton" id="button12">
+                          <object class="GtkButton" id="sellallquantityButton">
                             <property name="label" translatable="yes">ALL</property>
                             <property name="width_request">60</property>
                             <property name="visible">True</property>
@@ -960,7 +958,7 @@ WARNING **** EXPERIMENTAL SOFTWARE&lt; USE WITH CAUTION ***</property>
                         <property name="can_focus">False</property>
                         <property name="halign">center</property>
                         <child>
-                          <object class="GtkButton" id="button7">
+                          <object class="GtkButton" id="sellminuspriceButton">
                             <property name="label" translatable="yes">-</property>
                             <property name="width_request">37</property>
                             <property name="visible">True</property>
@@ -974,7 +972,7 @@ WARNING **** EXPERIMENTAL SOFTWARE&lt; USE WITH CAUTION ***</property>
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkEntry" id="entry5">
+                          <object class="GtkEntry" id="sellpriceEntry">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="text" translatable="yes">1</property>
@@ -986,7 +984,7 @@ WARNING **** EXPERIMENTAL SOFTWARE&lt; USE WITH CAUTION ***</property>
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkButton" id="button8">
+                          <object class="GtkButton" id="sellpluspriceButton">
                             <property name="label" translatable="yes">+</property>
                             <property name="width_request">38</property>
                             <property name="visible">True</property>
@@ -1011,7 +1009,7 @@ WARNING **** EXPERIMENTAL SOFTWARE&lt; USE WITH CAUTION ***</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <child>
-                          <object class="GtkButton" id="button13">
+                          <object class="GtkButton" id="sellminusfiveButton">
                             <property name="label" translatable="yes">-5%</property>
                             <property name="width_request">80</property>
                             <property name="visible">True</property>
@@ -1025,7 +1023,7 @@ WARNING **** EXPERIMENTAL SOFTWARE&lt; USE WITH CAUTION ***</property>
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkButton" id="button14">
+                          <object class="GtkButton" id="sellrecpriceButton">
                             <property name="label" translatable="yes">rec price</property>
                             <property name="width_request">80</property>
                             <property name="visible">True</property>
@@ -1039,7 +1037,7 @@ WARNING **** EXPERIMENTAL SOFTWARE&lt; USE WITH CAUTION ***</property>
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkButton" id="button27">
+                          <object class="GtkButton" id="sellplusfiveButton">
                             <property name="label" translatable="yes">+5%</property>
                             <property name="width_request">80</property>
                             <property name="visible">True</property>
@@ -1074,7 +1072,7 @@ WARNING **** EXPERIMENTAL SOFTWARE&lt; USE WITH CAUTION ***</property>
               </packing>
             </child>
             <child>
-              <object class="GtkEntry" id="entry6">
+              <object class="GtkEntry" id="selltotalEntry">
                 <property name="width_request">220</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
@@ -1089,7 +1087,7 @@ WARNING **** EXPERIMENTAL SOFTWARE&lt; USE WITH CAUTION ***</property>
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="button28">
+              <object class="GtkButton" id="sellconfirmButton">
                 <property name="label" translatable="yes">Confirm offer</property>
                 <property name="width_request">220</property>
                 <property name="visible">True</property>
@@ -1130,7 +1128,7 @@ WARNING **** EXPERIMENTAL SOFTWARE&lt; USE WITH CAUTION ***</property>
               </packing>
             </child>
             <child>
-              <object class="GtkScrolledWindow" id="scrolledwindow5">
+              <object class="GtkScrolledWindow" id="sellyouritemsScrollWindow">
                 <property name="height_request">233</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
@@ -1158,7 +1156,7 @@ WARNING **** EXPERIMENTAL SOFTWARE&lt; USE WITH CAUTION ***</property>
               </packing>
             </child>
             <child>
-              <object class="GtkScrolledWindow" id="scrolledwindow6">
+              <object class="GtkScrolledWindow" id="sellyourbalancesScrollWindow">
                 <property name="height_request">233</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
@@ -1338,7 +1336,7 @@ WARNING **** EXPERIMENTAL SOFTWARE&lt; USE WITH CAUTION ***</property>
                   <object class="GtkEntry" id="newitemQuantityEntry">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <property name="text" translatable="yes">0</property>
+                    <property name="text" translatable="yes">1</property>
                     <property name="placeholder_text" translatable="yes">Quantity</property>
                     <property name="input_purpose">number</property>
                   </object>
@@ -1364,7 +1362,7 @@ WARNING **** EXPERIMENTAL SOFTWARE&lt; USE WITH CAUTION ***</property>
                   <object class="GtkEntry" id="newitemRecPriceEntry">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <property name="text" translatable="yes">0.00</property>
+                    <property name="text" translatable="yes">1.00</property>
                     <property name="placeholder_text" translatable="yes">Recommended Price</property>
                     <property name="input_purpose">number</property>
                   </object>
@@ -1438,6 +1436,265 @@ WARNING **** EXPERIMENTAL SOFTWARE&lt; USE WITH CAUTION ***</property>
             <property name="expand">False</property>
             <property name="fill">True</property>
             <property name="position">1</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkWindow" id="window12">
+    <property name="can_focus">False</property>
+    <child>
+      <object class="GtkBox" id="box45">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkScrolledWindow" id="scrolledwindow1">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="shadow_type">in</property>
+            <child>
+              <placeholder/>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkBox" id="box49">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <child>
+              <object class="GtkLabel" id="label23">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">address</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="label24">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">balance</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkBox" id="box50">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <child>
+              <object class="GtkLabel" id="walletsendaddressLabel">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">label</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="walletsendbalanceLabel">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">label</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkBox" id="box46">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <child>
+              <object class="GtkLabel" id="label16">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">pay to: </property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEntry" id="walletsendpaytoEntry">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">3</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkBox" id="box47">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <child>
+              <object class="GtkLabel" id="label21">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">comment: </property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEntry" id="walletsendcommentEntry">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">4</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkBox" id="box48">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <child>
+              <object class="GtkLabel" id="label22">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">amount: </property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEntry" id="walletsendamountEntry">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkComboBoxText" id="cointypeComboBox">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <items>
+                  <item translatable="yes">SAFE</item>
+                </items>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">5</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkBox" id="box51">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <child>
+              <object class="GtkLabel" id="label27">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">label</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="label28">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">label</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="walletsendconfirmButton">
+                <property name="label" translatable="yes">button</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">6</property>
           </packing>
         </child>
       </object>
@@ -1551,8 +1808,12 @@ WARNING **** EXPERIMENTAL SOFTWARE&lt; USE WITH CAUTION ***</property>
     </child>
   </object>
   <object class="GtkWindow" id="window3">
+    <property name="width_request">700</property>
+    <property name="height_request">500</property>
     <property name="can_focus">False</property>
     <property name="title" translatable="yes">Home</property>
+    <property name="default_width">600</property>
+    <property name="default_height">500</property>
     <child>
       <object class="GtkGrid" id="grid2">
         <property name="width_request">600</property>
@@ -1625,8 +1886,10 @@ WARNING **** EXPERIMENTAL SOFTWARE&lt; USE WITH CAUTION ***</property>
         </child>
         <child>
           <object class="GtkScrolledWindow" id="ownAddressScrollBox">
+            <property name="width_request">320</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
+            <property name="resize_mode">immediate</property>
             <property name="shadow_type">in</property>
             <child>
               <placeholder/>
@@ -1886,9 +2149,197 @@ WARNING **** EXPERIMENTAL SOFTWARE&lt; USE WITH CAUTION ***</property>
     </child>
   </object>
   <object class="GtkWindow" id="window5">
+    <property name="width_request">700</property>
+    <property name="height_request">500</property>
     <property name="can_focus">False</property>
     <child>
-      <placeholder/>
+      <object class="GtkBox" id="box40">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <child>
+          <object class="GtkBox" id="box41">
+            <property name="width_request">350</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="orientation">vertical</property>
+            <child>
+              <object class="GtkBox" id="box43">
+                <property name="height_request">200</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="orientation">vertical</property>
+                <child>
+                  <object class="GtkBox" id="box44">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <child>
+                      <object class="GtkButton" id="walletsendButton">
+                        <property name="label" translatable="yes">send</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="wallettransactionsButton">
+                        <property name="label" translatable="yes">transactions</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="walletaddressbookButton">
+                        <property name="label" translatable="yes">address book</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">2</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="walletreceiveButton">
+                        <property name="label" translatable="yes">receive</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">3</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="walletallButton">
+                        <property name="label" translatable="yes">all</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="relief">half</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">4</property>
+                      </packing>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkScrolledWindow" id="walletsmallScrollWindow">
+                    <property name="height_request">260</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="shadow_type">in</property>
+                    <child>
+                      <placeholder/>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="expand">True</property>
+                    <property name="fill">True</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkBox" id="box42">
+                <property name="height_request">200</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="orientation">vertical</property>
+                <child>
+                  <object class="GtkLabel" id="label9">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label" translatable="yes">Balances:</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="walletsafecoinbalanceLabel">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label" translatable="yes">0000000 SAFE</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="walletbitcoinbalanceLabel">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label" translatable="yes">0000000000.00 BTC</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">2</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow" id="walletbigScrollWindow">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="shadow_type">in</property>
+            <child>
+              <placeholder/>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+      </object>
     </child>
   </object>
   <object class="GtkWindow" id="window6">
@@ -2143,6 +2594,7 @@ WARNING **** EXPERIMENTAL SOFTWARE&lt; USE WITH CAUTION ***</property>
     <property name="width_request">600</property>
     <property name="height_request">400</property>
     <property name="can_focus">False</property>
+    <property name="title" translatable="yes">New Alias</property>
     <child>
       <object class="GtkBox" id="box39">
         <property name="visible">True</property>

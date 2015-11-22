@@ -1,0 +1,118 @@
+diff --git a/.travis.yml b/.travis.yml
+index c9a701d..c52c685 100644
+--- a/.travis.yml
++++ b/.travis.yml
+@@ -1,11 +1,7 @@
+ env:
+     global:
+-        - secure: hO3muck3cWHMhL7hS6OYeYEGL56qE9p8YSHJgKLYF4o+QN7O8imKWlKMTrBe/pKEHVylO3n8bnsDw2+pGVK6FkDvsdiJAPhq5Cx1Hd9R4SjvkKC2Sn9ypT/3CM1wPi6DcawVTuAFleNlc5NujI/ToXonXWQ0D4nimNAdCKntdgMbFs1YbQxVADnW7pbii1wusgtiT6xWyWJwcqTXwW5XJofig7cKHO2fYpi/0nWkug+BGhfeOJ6/fC6GbBJ/7azfGB9Nc+hRNhCbMtHJGbTkuupSVtpxk7TuEwnVDYosWQAjJxaWYSM1eJmvysgC+tvMQgw8haGpgY9xni+nu3HrozEgYYnwnh5+N4TZdn4AczrVEs1n2Y82cQp/++OS4X08+B/HWCN5WDzXRx+HOskAyvE1wA9P/payXZeUfRBqs0Z+mBcRcPxPxM7tIUT2lTBbeTjrzb/Qz4t3Iy3WTGG1T84K5YtOLstTGKBpu5LxW++f2rEGbQA7N3v1l0PiT5ZWgqkB4NgoE7wLxXVRqIV+kjSX/C7Gi1dC5EnCU1XCqA9T3USRuB/SGJxhDuw/Gmde1n/Y7SaQnCwgrMPj7LMIF49qYPIf7r6Zb+FVb+pkSbf7LiKNr3DABuDDInBn8UcoXlRMBbxTtvSKLxXds7TN3qFilNj4yizrOGWGdcCFwRU=
++        - secure: RVFYihimdtv0UqBioZp8pEhyYLLQ/md6DOg6h3F7IZP2XhXZvjxevVmLMTITuXKMIls5o0jjaQZfSNYg29ItD5y0/fEaNI0A6zZi6SDtdVQyO5opJP9oh0x/gmRrPMaJPVgmdTztJcIgtGapYVImkkX6A+UhET7Rw+VrGLEXbdY=
+ language: rust
+-branches:
+-    only:
+-        - master
+-        - gh-pages
+ install:
+     - wget https://github.com/jedisct1/libsodium/releases/download/1.0.3/libsodium-1.0.3.tar.gz
+     - tar xvfz libsodium-1.0.3.tar.gz
+@@ -13,37 +9,8 @@ install:
+ script:
+     - cargo build --verbose
+     - cargo test --verbose
+-after_script: |
+-  if  [[ $TRAVIS_BRANCH = master ]] && [[ $TRAVIS_PULL_REQUEST = false ]]; then
+-    cargo doc &&
+-    echo "<meta http-equiv=refresh content=0;url=`echo $TRAVIS_REPO_SLUG | cut -d '/' -f 2`/index.html>" > target/doc/index.html &&
+-    sudo pip install ghp-import &&
+-    mkdir docs-stage &&
+-    COMMIT_MSG=$(git log -1 | tr '[:upper:]' '[:lower:]' | grep "version change to " | tr -d ' ') &&
+-    git clone https://github.com/${TRAVIS_REPO_SLUG}.git  docs-stage &&
+-    cd docs-stage &&
+-    git checkout gh-pages;
+-    rm -rf .git*;
+-    # lines 24 - 28 is a patch script for handling old gh-pages structure
+-    OLD_FILE=$(ls | grep "main.js");
+-    if [[ $OLD_FILE == main* ]]; then
+-      rm -rf * &&
+-      echo "<meta http-equiv=refresh content=0;url=master/`echo $TRAVIS_REPO_SLUG | cut -d '/' -f 2`/index.html>" > index.html;
+-    fi
+-    if [[ $COMMIT_MSG == versionchangeto* ]];  then
+-      VERSION=${COMMIT_MSG##*to} &&
+-      mkdir -p $VERSION &&
+-      mkdir -p latest &&
+-      cp -rf ../target/doc/* $VERSION &&
+-      cp -rf ../target/doc/* latest &&
+-      git config --global user.email dev@maidsafe.net &&
+-      git config --global user.name maidsafe-jenkins &&
+-      git tag $VERSION -a -m "Version $VERSION" &&
+-      git push -q https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG} --tags;
+-    fi
+-    mkdir -p master
+-    cp -rf ../target/doc/* master &&
+-    cd .. &&
+-    ghp-import -n docs-stage &&
+-    git push -fq https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git gh-pages;
+-  fi
++    - cargo doc
++after_script:
++    # the doc directory needs to be in the root for rust-ci
++    - mv target/doc doc
++    - curl http://www.rust-ci.org/artifacts/put?t=$RUSTCI_TOKEN | sh
+diff --git a/Cargo.toml b/Cargo.toml
+index 98bb4cf..87734ce 100644
+--- a/Cargo.toml
++++ b/Cargo.toml
+@@ -1,8 +1,8 @@
+ [package]
+ name = "sodiumoxide"
+ description = "Fast cryptographic library for Rust (bindings to libsodium)"
+-documentation = "http://maidsafe.net/sodiumoxide"
+-repository = "https://github.com/maidsafe/sodiumoxide"
++documentation = "http://rust-ci.org/dnaq/sodiumoxide/doc/sodiumoxide/"
++repository = "https://github.com/dnaq/sodiumoxide"
+ readme = "README.md"
+ keywords = ["crypto", "NaCl", "libsodium"]
+ version = "0.0.5"
+@@ -12,10 +12,9 @@ license = "MIT"
+ [dependencies]
+ libc = "*"
+ libsodium-sys = "*"
+-rustc-serialize = "*"
+ 
+-[dev-dependencies.cbor]
+-cbor = "*"
++[dev-dependencies.rustc-serialize]
++rustc-serialize = "*"
+ 
+ [features]
+ benchmarks = []
+diff --git a/README.md b/README.md
+index e1de880..4595aec 100644
+--- a/README.md
++++ b/README.md
+@@ -32,7 +32,7 @@ Most documentation is taken from NaCl, with minor modification where the API
+ differs between the C and Rust versions.
+ 
+ Documentation for the latest build can be found at
+-[http://maidsafe.net/sodiumoxide](http://maidsafe.net/sodiumoxide).
++[rust-ci](http://rust-ci.org/dnaq/sodiumoxide/doc/sodiumoxide/).
+ 
+ Examples
+ --------
+@@ -44,15 +44,8 @@ File bugs in the issue tracker
+ 
+ Master git repository
+ 
+-    git clone https://github.com/maidsafe/sodiumoxide.git
++    git clone https://github.com/dnaq/sodiumoxide.git
+ 
+ License
+ -------
+ MIT
+-
+-Status
+-------
+-
+-| Crate | Linux | Windows | OSX |
+-|:-----:|:-----:|:-------:|:---:|
+-| N/A |[![Build Status](https://travis-ci.org/maidsafe/sodiumoxide.svg?branch=master)](https://travis-ci.org/maidsafe/sodiumoxide)| [![Build Status](http://ci.maidsafe.net:8080/buildStatus/icon?job=sodiumoxide_win64_status_badge)](http://ci.maidsafe.net:8080/job/sodiumoxide_win64_status_badge/) | [![Build Status](http://ci.maidsafe.net:8080/buildStatus/icon?job=sodiumoxide_osx_status_badge)](http://ci.maidsafe.net:8080/job/sodiumoxide_osx_status_badge/) |
