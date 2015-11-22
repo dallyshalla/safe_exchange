@@ -243,9 +243,9 @@ fn main() {
    let profilecell_clone8 = profile_cell.clone();
    let profilecell_clone9 = profile_cell.clone();
 
-   let mut buysearch_items_found = Vec::new();
-   let buysearch_items_found_cell = Rc::new(RefCell::new(buysearch_items_found));
-   let buysearch_items_found_clone1 = buysearch_items_found_cell.clone();
+   //let mut buysearch_items_found = Vec::new();
+   //let buysearch_items_found_cell = Rc::new(RefCell::new(buysearch_items_found));
+   //let buysearch_items_found_clone1 = buysearch_items_found_cell.clone();
 
    let mut exchange_alias = Alias::new();
    let exchange_alias_cell = Rc::new(RefCell::new(exchange_alias));
